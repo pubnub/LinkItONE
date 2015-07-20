@@ -158,6 +158,7 @@ i)	The PubNub LinkIt ONE library also enables retrieval of message history. The 
 
     delay(10000);
 }
+<br>
 Now, launch the sketch and after upload is completed successfully, the serial output will display the following:
 ![Serial output content of the PubNubWiFi example sketch](https://github.com/pubnub/LinkItONE/blob/master/serialOutput.png)
 <br>
