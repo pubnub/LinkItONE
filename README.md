@@ -93,7 +93,7 @@ a)	Publish a message over the Wi-Fi connection.
         Serial.println("publishing a message");
         client = PubNub.publish(channel, "\"\\\"Hello world!\\\" she said.\""); 
     
-ii)	If the Wi-Fi client is not available printout the "publishing error" message to the serial output, then wait for a second (1000 ms) by calling the ``delay(1000`` function before trying to connect again. 
+ii)	If the Wi-Fi client is not available printout the "publishing error" message to the serial output, then wait for a second (1000 ms) by calling the ``delay(1000)`` function before trying to connect again. 
     
     if (!client) {
         Serial.println("publishing error");
