@@ -158,7 +158,10 @@ i)	The PubNub LinkIt ONE library also enables retrieval of message history. The 
 
     delay(10000);
 }
-
+Now, launch the sketch and after upload is completed successfully, the serial output will display the following:
+![Serial output content of the PubNubWiFi example sketch](https://github.com/pubnub/LinkItONE/blob/master/serialOutput.png)
+<br>
+<i>Serial output content of the PubNubWiFi example sketch</i>
 ## Defining the Wi-Fi library in the PubNub LinkIt ONE library
 If you are running Arduino IDE 1.6.4, the content of the PubNub.h header file should include the following library support for Wi-Fi communication. 
 
