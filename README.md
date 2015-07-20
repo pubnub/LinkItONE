@@ -1,7 +1,8 @@
-# LinkItONE
+# LinkItONE Library
 PubNub for the Mediatek Linkit ONE SDK
-# PubNub LinkIt ONE Library 
+
 This library enables your sketches to communicate with the PubNub Data Stream Network, using the Wi-Fi feature of the LinkIt ONE development board. Your application can publish messages and subscribe to channels using the PubNub API. A “Hello World” example client application is provided.
+
 ## Supported Hardware
 The LinkIt ONE development board is based on the MediaTek MT2502 (Aster) chipset, in combination with high performance Wi-Fi (MT5931) and GNSS (MT3332) chipsets. In addition to enabling a wide range of Wearables and IoT proof-of-concepts to be developed, its built-in Wi-Fi feature makes it ideal for creating devices that use the features of the PubNub Data Stream Network. For more information on the LinkIt ONE development board and its hardware specifications, refer to the LinkIt ONE HDK web page. For information on setup and configuration of the LinkIt ONE development board, see the LinkIt ONE Get Started guide. 
 ## Library Installation
