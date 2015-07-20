@@ -163,11 +163,17 @@ i)	The PubNub LinkIt ONE library also enables retrieval of message history. The 
 If you are running Arduino IDE 1.6.4, the content of the PubNub.h header file should include the following library support for Wi-Fi communication. 
 
 ``#define PubNub_WiFi``
+
 ``#elif defined(PubNub_WiFi)``
+
 ``#include "LWiFiClient.h"``
+
 ``#define PubNub_BASE_CLIENT LWiFiClient``
+
 ``#else``
+
 ``#error PubNub_BASE_CLIENT set to an invalid value!``
+
 ``#endif``
 
 If your Arduino IDE version is 1.5.6 or 1.5.7, use ``#include "LWiFi\LWiFiClient.h"`` instead of `` #include "LWiFiClient.h".``
