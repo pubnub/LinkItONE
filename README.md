@@ -4,10 +4,10 @@ PubNub for the Mediatek Linkit ONE SDK
 This library enables your sketches to communicate with the PubNub Data Stream Network, using the Wi-Fi feature of the LinkIt ONE development board. Your application can publish messages and subscribe to channels using the PubNub API. A “Hello World” example client application is provided.
 
 ## Supported Hardware
-The LinkIt ONE development board is based on the MediaTek MT2502 (Aster) chipset, in combination with high performance Wi-Fi (MT5931) and GNSS (MT3332) chipsets. In addition to enabling a wide range of Wearables and IoT proof-of-concepts to be developed, its built-in Wi-Fi feature makes it ideal for creating devices that use the features of the PubNub Data Stream Network. For more information on the LinkIt ONE development board and its hardware specifications, refer to the LinkIt ONE HDK web page. For information on setup and configuration of the LinkIt ONE development board, see the LinkIt ONE Get Started guide. 
+The LinkIt ONE development board is based on the MediaTek MT2502 (Aster) chipset, in combination with high performance Wi-Fi (MT5931) and GNSS (MT3332) chipsets. In addition to enabling a wide range of Wearables and IoT proof-of-concepts to be developed, its built-in Wi-Fi feature makes it ideal for creating devices that use the features of the PubNub Data Stream Network. For more information on the LinkIt ONE development board and its hardware specifications, refer to the [LinkIt ONE HDK](http://labs.mediatek.com/linkitonehdk) web page. For information on setup and configuration of the LinkIt ONE development board, see the [LinkIt ONE Get Started guide](http://labs.mediatek.com/onestart). 
 ## Library Installation
-Sketches for the LinkIt ONE development board are created with the MediaTek LinkIt ONE SDK (for Arduino), a plug-in for the Arduino IDE that includes libraries for the LinkIt ONE API and a board firmware update tool. Before you can make use of the PubNub LinkIt ONE Library, you’ll need to install the LinkIt ONE SDK into your copy of the Arduino IDE. Instructions for doing this for Microsoft Windows or Apple Mac OS X are provided in the LinkIt ONE Get Started guide. 
-Next, download the PubNub LinkIt ONE Library from its GitHub repository. Create a new folder named PubNub in your Arduino libraries folder. Move the contents of the PubNub LinkIt ONE Library to the newly created folder in Arduino\libraries\PubNub.
+Sketches for the LinkIt ONE development board are created with the [MediaTek LinkIt ONE SDK](http://labs.mediatek.com/linkitonesdk) (for Arduino), a plug-in for the Arduino IDE that includes libraries for the LinkIt ONE API and a board firmware update tool. Before you can make use of the PubNub LinkIt ONE Library, you’ll need to install the LinkIt ONE SDK into your copy of the Arduino IDE. Instructions for doing this for Microsoft Windows or Apple Mac OS X are provided in the LinkIt ONE Get Started guide. 
+Next, download the [PubNub LinkIt ONE Library](https://github.com/pubnub/LinkItONE) from its GitHub repository. Create a new folder named PubNub in your Arduino ``libraries`` folder. Move the contents of the [PubNub LinkIt ONE Library](https://github.com/pubnub/LinkItONE) to the newly created folder in ``Arduino\libraries\PubNub``.
 Congratulations, your PubNub LinkIt ONE Library is ready to use. 
 ## Wi-Fi Support Example
 The following example project demonstrates the use of the PubNub LinkIt ONE library with the LinkIt ONE development board’s Wi-Fi. The example contains three files: ``PubNub.h `` (header file), ``PubNub.cpp`` (source file) and ``PubNubWifi.ino`` (Arduino sketch).
@@ -65,7 +65,7 @@ b)	Start serial communication at a baud rate of 9600 and print a message “Seri
     Serial.println("Serial set up");
        
 
-c)	Establish communication over Wi-Fi in a while loop, by calling the connect method of the LWiFi class. Once it’s connected, send the "Connected to AP" message to the serial output.
+c)	Establish communication over Wi-Fi in a while loop, by calling the connect method of the ``LWiFi`` class. Once it’s connected, send the "Connected to AP" message to the serial output.
 
     Serial.println("Connecting to AP");
     while (0 == LWiFi.connect(WIFI_AP, LWiFiLoginInfo(WIFI_AUTH, WIFI_PASSWORD)))
@@ -75,7 +75,7 @@ c)	Establish communication over Wi-Fi in a while loop, by calling the connect me
     }
     Serial.println("Connected to AP");     
 
-d)	Begin communication with PubNub using the publish (pubkey) and subscribe (subkey) keys defined earlier. 
+d)	Begin communication with PubNub using the publish (``pubkey``) and subscribe (``subkey``) keys defined earlier. 
 
     PubNub.begin(pubkey, subkey);
     Serial.println("PubNub set up");
@@ -85,7 +85,7 @@ d)	Begin communication with PubNub using the publish (pubkey) and subscribe (sub
 
 a)	Publish a message over the Wi-Fi connection.
 
-  i)	Define a client object of LwiFiClient class and printout a message "publishing a message" to the serial output. The client object is then assigned to the PubNub published message. 
+  i)	Define a client object of ``LwiFiClient`` class and printout a message "publishing a message" to the serial output. The client object is then assigned to the PubNub published message. 
 
     void loop()
     {
@@ -93,7 +93,7 @@ a)	Publish a message over the Wi-Fi connection.
         Serial.println("publishing a message");
         client = PubNub.publish(channel, "\"\\\"Hello world!\\\" she said.\""); 
     
-ii)	If the Wi-Fi client is not available printout the "publishing error" message to the serial output, then wait for a second (1000 ms) by calling the delay(1000) function before trying to connect again. 
+ii)	If the Wi-Fi client is not available printout the "publishing error" message to the serial output, then wait for a second (1000 ms) by calling the ``delay(1000`` function before trying to connect again. 
     
     if (!client) {
         Serial.println("publishing error");
@@ -109,7 +109,7 @@ iii)	Call the connected() method of the client object in a while loop, read the 
         Serial.print(c);
     }
     
-iv)	Stop the publication of messages on PubNub by calling the stop() method of the client object, then blink the LED as confirmation with the flash(pubLEDPin) function. 
+iv)	Stop the publication of messages on PubNub by calling the ``stop()`` method of the ``client`` object, then blink the LED as confirmation with the ``flash(pubLEDPin)`` function. 
 
     client->stop();
     Serial.println();
@@ -117,7 +117,7 @@ iv)	Stop the publication of messages on PubNub by calling the stop() method of t
     
 b)	Subscribe to a channel and read a message using a Wi-Fi connection.
 
-i)	Print out a message on the serial output indicating PubNub subscription status. Define a pclient object of the PubSubClient class and if it’s not available send an error message to the serial output.
+i)	Print out a message on the serial output indicating PubNub subscription status. Define a ``pclient`` object of the ``PubSubClient`` class and if it’s not available send an error message to the serial output.
 
     Serial.println("waiting for a message (subscribe)");
     PubSubClient *pclient = PubNub.subscribe(channel);
@@ -127,7 +127,7 @@ i)	Print out a message on the serial output indicating PubNub subscription statu
         return;
     }    
     
-ii)	In a while loop read the subscribed message and print it out on the serial output. Stop the communication and flash the LED as a confirmation by calling the flash(subLedPin) function. 
+ii)	In a while loop read the subscribed message and print it out on the serial output. Stop the communication and flash the LED as a confirmation by calling the ``flash(subLedPin)`` function. 
 
     while (pclient->wait_for_data()) {
         char c = pclient->read();
