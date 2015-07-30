@@ -174,8 +174,6 @@ If you are running Arduino IDE 1.6.4, the content of the PubNub.h header file sh
     #error PubNub_BASE_CLIENT set to an invalid value!
     #endif
 
-If your Arduino IDE version is 1.5.6 or 1.5.7, use ``#include "..\LWiFi\LWiFiClient.h"`` instead of `` #include "LWiFiClient.h".``
-
 Congratulations, you now have an example application to publish, subscribe and retrieve messages from a channel using LinkIt ONE Wi-Fi support with the PubNub LinkIt ONE Library.  
 
 ##GPRS Support example
