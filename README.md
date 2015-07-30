@@ -210,7 +210,7 @@ Initiate Serial communication with a baud rate of 9600 and print a message “Se
         Serial.begin(9600);
         Serial.println("Serial setup"); 
         
-5)	Establish communication over GPRS in a while loop, by calling the ``attachGPRS`` method of the LGPRS class. Replace the three parameters of the ``attachGPRS`` method with your network provider’s information such as the access point name, username and password. Allow one second of waiting time before reconnecting to GPRS in a while loop by calling ``delay(1000)`` function. Once it’s connected, send the ``"LGPRS setup"`` message to the serial output.  
+5)	Establish communication over GPRS in a while loop, by calling the ``attachGPRS`` method of the LGPRS class. Replace the three parameters of the ``attachGPRS`` method with your network provider’s information for the access point name, username and password. Allow one second of waiting time before reconnecting to GPRS in the while loop by calling ``delay(1000)`` function. Once it’s connected, send the ``"LGPRS setup"`` message to the serial output.  
 
     while (!LGPRS.attachGPRS("everywhere", "eesecure", "secure"))
     {
@@ -229,7 +229,7 @@ Initiate Serial communication with a baud rate of 9600 and print a message “Se
 
 a)	Publishing a message over the GPRS connection. 
 
-Define a client object of ``LGPRSClient`` class and printout a message ``"publishing a message"`` to the serial output. The client object is then assigned to the PubNub published message as shown below.  
+Define a client object of ``LGPRSClient`` class and printout a message ``"publishing a message"`` to the serial output. The client object is then assigned to the PubNub published message.  
 
     void loop()
     {
@@ -313,6 +313,9 @@ The content of the ``PubNub.h`` header file should include the following library
     #elif defined(PubNub_GPRS)
     #include "LGPRSClient.h"
     #define PubNub_BASE_CLIENT LGPRSClient
+    #else
+    #error PubNub_BASE_CLIENT set to an invalid value!
+    #endif
 
 Congratulations, you now have an example application to publish, subscribe and retrieve messages from a channel using LinkIt ONE GPRS support for the PubNub LinkIt ONE Library. 
 
