@@ -280,7 +280,7 @@ In a while loop read the subscribed message and print it out on the serial outpu
 
 c)	Retrieving message history.  
 
-The PubNub LinkIt ONE library also enables retrieval of message history. The functionality is similar to cases (a) and (b).  
+The PubNub LinkIt ONE library also enables retrieval of message history. The functionality is similar to message publication (a) and subscribe and read messages (b).  
 
     Serial.println("retrieving message history");
     client = PubNub.history(channel);
@@ -316,13 +316,3 @@ The content of the ``PubNub.h`` header file should include the following library
     #endif
 
 Congratulations, you now have an example application to publish, subscribe and retrieve messages from a channel using LinkIt ONE GPRS support for the PubNub LinkIt ONE Library. 
-
-
-    
-
-
-
-
-
-
-
