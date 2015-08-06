@@ -1,4 +1,4 @@
-# LinkItONE Library
+# LinkIt ONE Library
 PubNub for the Mediatek Linkit ONE SDK
 
 This library enables your sketches to communicate with the PubNub Data Stream Network, using the Wi-Fi and GPRS features of the LinkIt ONE development board. Your application can publish messages and subscribe to channels using the PubNub API. A “Hello World” example client application is provided.
